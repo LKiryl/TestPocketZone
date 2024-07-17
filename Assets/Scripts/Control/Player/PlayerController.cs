@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public static PlayerController Instance;
 
     private PlayerInput _playerInput;
     private FrameInput _frameInput;
 
-
-
-    private Rigidbody2D _rigidbody;
     private Movement _movement;
 
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        if (Instance == null) { Instance = this; }
+
         _playerInput = GetComponent<PlayerInput>();
         _movement = GetComponent<Movement>();
     }
