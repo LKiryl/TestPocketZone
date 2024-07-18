@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
         }, bullet =>
         {
             Destroy(bullet);
-        }, false, 20, 40);
+        }, false, 10, 20);
     }
     private void Shoot()
     {

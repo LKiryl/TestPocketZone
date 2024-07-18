@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int _startingHealth = 3;
+    [SerializeField] private float _startingHealth = 3f;
 
-    private int _currentHealth;
+    private float _currentHealth;
 
     private void Start()
     {
@@ -24,8 +24,12 @@ public class Health : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
-            //OnDeath?.Invoke(this);
             Destroy(gameObject);
         }
+    }
+
+    public float GetFraction()
+    {      
+        return _currentHealth / _startingHealth;
     }
 }
